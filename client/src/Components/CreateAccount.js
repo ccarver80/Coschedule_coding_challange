@@ -23,7 +23,12 @@ export default function CreateAccount(props) {
             return res.json()
         }
        })
-       .then((data) => {props.auth(true); props.userInfo(data.username); nav('/')})
+       .then((data) => {  
+        //    sets auth on app.js to true, and passes username up to app, which then passes down to the header, then nav to homepage
+        props.auth(true); 
+        props.userInfo(data.username); 
+        nav('/')
+    })
     }
     // useEffect(() => {
         
