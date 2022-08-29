@@ -4,9 +4,9 @@
 ### Other packages include:
 - Sequelize for connecting to a database
 - Tailwind CSS for design
-- bcrypt - encrypting users data
-- SqLite - lightweight database for testing
-- nodemon - Auto reset server anytime change is detected
+- Bcrypt - encrypting users data
+- SQLite - lightweight database for testing
+- Nodemon - Auto reset server anytime change is detected
 
 ## Steps to run Application
 
