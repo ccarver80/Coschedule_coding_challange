@@ -1,6 +1,12 @@
 # Coschedule_coding_challange
 
 # Built using React and Express 
+### Other packages include:
+- Sequelize for connecting to a database
+- Tailwind CSS for design
+- bcrypt - encrypting users data
+- SqLite - lightweight database for testing
+- nodemon - Auto reset server anytime change is detected
 
 ## Steps to run Application
 
