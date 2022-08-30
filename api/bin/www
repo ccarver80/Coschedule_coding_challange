@@ -34,7 +34,7 @@ server.on('listening', onListening);
 (async() => {
   try {
 await sequelize.authenticate();
-await sequelize.sync({force: true});
+await sequelize.sync();
 console.log(`Connection successful on port:${port}`)
 
 

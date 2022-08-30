@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
         </Route>
 
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/signin" element={<Signin userInfo={setUserInfo} auth={setAuth}/>} />
         <Route path='/create_account' element={<CreateAccount userInfo={setUserInfo} auth={setAuth}/>} />
       </Routes>
     </BrowserRouter></>

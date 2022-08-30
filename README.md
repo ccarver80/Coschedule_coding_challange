@@ -20,6 +20,9 @@
 
 
 ## Instructions for running application
-1. You can create an account by clicking the "Create New Account" button on signin page
-2. Or, you can use the username "Test123" and password "password" to login real quick.
+1. You can create an account by clicking the "Create New Account" button on sign in page
+2. Or, you can use the username "test123" and password "123" to login real quick.
 
+
+## Log
+- **Aug 29th 2022:** Started project by building repo, Created front end with "Create-React-App", and started backend with "Express Generator". Installed Tailwind, and configured for design. Built login and sign up routes. Installed sequelize on backend and created user model. Created SQLite database to store info for users. Built user authentication to login and sign up successful. Need to build in some features to for wrong username or password, and make user friendly. 

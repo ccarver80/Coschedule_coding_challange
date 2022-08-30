@@ -21,6 +21,8 @@ export default function CreateAccount(props) {
        .then((res) => {
         if(res.ok) {
             return res.json()
+        }else{
+            console.log(res.json())
         }
        })
        .then((data) => {  
