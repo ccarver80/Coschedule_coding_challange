@@ -7,6 +7,7 @@
 - Bcrypt - encrypting users data
 - SQLite - lightweight database for testing
 - Nodemon - Auto reset server anytime change is detected
+- Node-Fetch - To make fetch requests from the server
 
 ## Steps to run Application
 
@@ -27,4 +28,4 @@
 ## Log
 - **Aug 29th, 2022:** Started project by building repo, Created front end with "Create-React-App", and started backend with "Express Generator". Installed Tailwind, and configured for design. Built login and sign up routes. Installed sequelize on backend and created user model. Created SQLite database to store info for users. Built user authentication to login and sign up successful. Need to build in some features to for wrong username or password, and make user friendly. 
 
-- **Aug 30th, 2022** Added custom error messages to user sign up and login for error handling. Made username must be unique on database, and at least 5 characters. 
+- **Aug 30th, 2022** Added custom error messages to user sign up and login for error handling. Updated users model to so username must be unique on database, and at least 5 characters. Downloaded node-fetch and made a simple call on node side to https://catfact.ninja/fact for testing purposes and was able to fetch data from server and serve it back to client successfully. 
