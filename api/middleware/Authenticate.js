@@ -24,11 +24,15 @@ exports.authUser = async (req, res, next) => {
       if (authenticate) {
         req.currentUser = user;
         next();
+      }else {
+        res.status(401).json({
+          message: "Sorry username or password doesn't match"
+        })
       }
     } else {
       // if there is no user
       res.status(401).json({
-        message: "This email address does not exist.",
+        message: "This username does not exist.",
       });
     }
   }

@@ -10,6 +10,7 @@ export default function Signin(props) {
 
   // Hooks 
   const [signInData, setSignInData] = useState();
+  const [errMessage, setErrMessage] = useState();
 
   const sendLogin = async (e) => {
     
@@ -29,16 +30,21 @@ export default function Signin(props) {
       
     })
     .then((res) => {
-      if(res.ok) {
-          return res.json()
-      }
-     })
-     .then((data) => {  
-      //    sets auth on app.js to true, and passes username up to app, which then passes down to the header, then nav to homepage
-      props.auth(true); 
-      props.userInfo(data.username); 
-      nav('/')
+      return res.json()
   })
+  .then((data) => {  
+   console.log(data)
+   if(data.username){  
+       //    sets auth on app.js to true, and passes username up to app, which then passes down to the header, then nav to homepage
+        props.auth(true); 
+   props.userInfo(data.username); 
+   nav('/')
+   }else{
+      setErrMessage(data.message)
+   }
+ 
+  
+})
   }
 
     return (
@@ -47,6 +53,9 @@ export default function Signin(props) {
       <div className='flex flex-col mx-auto mt-10 rounded-lg border border-black'>
       <form onSubmit={sendLogin} className='flex flex-col p-5 mx-auto '>
           <label>Username</label>
+            {/* Handle err messages from server */}
+            {errMessage ? (<h1 className="text-2xl text-red-500">{errMessage}</h1>) : ""}
+            
           <input className='border border-slate-500' onChange={(e) => setSignInData({...signInData, username: e.target.value})} type='text' />
           <label>Password</label>
           <input className='border border-slate-500' onChange={(e) => setSignInData({...signInData, password: e.target.value})} type='password'/>

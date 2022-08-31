@@ -27,14 +27,14 @@ router.post("/create_user", async (req, res) => {
     const salt = await bcrypt.genSalt();
     const hashpass = await bcrypt.hash(req.body.password, salt);
     const newUser = await users.create({
-      email: req.body.email,
       username: req.body.username,
       password: hashpass,
     });
 
     res.status(201).json({ username: req.body.username });
   } catch (err) {
-    res.status(404).json({ message: "Sorry something went wrong" });
+    console.log(err)
+    res.status(404).json({message: err.message})
   }
 });
 

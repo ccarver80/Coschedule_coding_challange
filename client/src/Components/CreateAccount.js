@@ -6,6 +6,7 @@ export default function CreateAccount(props) {
 
     // Hooks
     const [formData, setFormData] = useState()
+    const [errMessage, setErrMessage] = useState()
 
    const submitForm = async(e) => {
     console.log(formData)
@@ -19,17 +20,20 @@ export default function CreateAccount(props) {
        }
        )
        .then((res) => {
-        if(res.ok) {
-            return res.json()
-        }else{
-            console.log(res.json())
-        }
+           return res.json()
        })
        .then((data) => {  
-        //    sets auth on app.js to true, and passes username up to app, which then passes down to the header, then nav to homepage
-        props.auth(true); 
+        console.log(data)
+        if(data.username){  
+            //    sets auth on app.js to true, and passes username up to app, which then passes down to the header, then nav to homepage
+             props.auth(true); 
         props.userInfo(data.username); 
         nav('/')
+        }else{
+           setErrMessage(data.message)
+        }
+      
+       
     })
     }
     // useEffect(() => {
@@ -42,14 +46,15 @@ export default function CreateAccount(props) {
             <div className='flex flex-col mx-auto mt-10 rounded-lg border border-black'>
             <h1>Create New Account</h1>
                 <form onSubmit={submitForm} className='flex flex-col p-5 mx-auto '>
-                    <label>Please Enter a valid Email</label>
-                    <input className='border border-slate-500' onChange={(e) => setFormData({...formData, email: e.target.value })} type='email' />
+                    
                     <label>Please Pick A Username</label>
+                    {/* Handle err messages from server */}
+                    {errMessage ? (<h1 className="text-2xl text-red-500">{errMessage}</h1>) : ""}
+
                     <input className='border border-slate-500' onChange={(e) => setFormData({...formData, username: e.target.value })} type='text' />
                     <label>Please Pick A Password</label>
-                    <input className='border border-slate-500' onChange={(e) => setFormData({...formData, password: e.target.value })}type='password'/>
-                    {/* <label>Please Type Password Again</label>
-                    <input className='border border-slate-500' type='password'/> */}
+                    <input minLength={5} className='border border-slate-500' onChange={(e) => setFormData({...formData, password: e.target.value })}type='password'/>
+          
                     
                    
                     <button type='submit'>Create Account</button>
