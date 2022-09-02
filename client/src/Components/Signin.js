@@ -37,7 +37,7 @@ export default function Signin(props) {
    if(data.username){  
        //    sets auth on app.js to true, and passes username up to app, which then passes down to the header, then nav to homepage
         props.auth(true); 
-   props.userInfo(data.username); 
+   props.userInfo(data); 
    nav('/')
    }else{
       setErrMessage(data.message)

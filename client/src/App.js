@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateAccount from "./Components/CreateAccount";
 import Header from "./Components/Header";
@@ -9,7 +9,11 @@ import PrivateRoute from "./PrivateRoute";
 function App() {
 
   const [auth, setAuth] = useState(false)
-  const [userInfo, setUserInfo] = useState()
+  const [userInfo, setUserInfo] = useState({})
+
+  useEffect(() => {
+    console.log(userInfo)
+  })
 
   return (
     <>
@@ -19,7 +23,7 @@ function App() {
 
       {/* Added private route so user HAS to be logged in */}
         <Route element={<PrivateRoute auth={auth}/>}>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home id={userInfo.id}/>} />
         </Route>
 
         <Route path="/signin" element={<Signin userInfo={setUserInfo} auth={setAuth}/>} />

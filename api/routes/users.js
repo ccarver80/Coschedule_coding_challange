@@ -11,6 +11,7 @@ const users = require("../models").Users;
 router.get("/user", authUser, async (req, res) => {
   try {
     const user = req.currentUser;
+    console.log(user)
     //If worked sends back user info
     res.status(200).json(user);
   } catch (err) {
@@ -23,7 +24,7 @@ router.get("/user", authUser, async (req, res) => {
 // Create a new user post route
 router.post("/create_user", async (req, res) => {
   try {
-    console.log(req.body);
+    
     const salt = await bcrypt.genSalt();
     const hashpass = await bcrypt.hash(req.body.password, salt);
     const newUser = await users.create({
@@ -31,7 +32,7 @@ router.post("/create_user", async (req, res) => {
       password: hashpass,
     });
 
-    res.status(201).json({ username: req.body.username });
+    res.status(201).json({ username: newUser });
   } catch (err) {
     console.log(err)
     res.status(404).json({message: err.message})
