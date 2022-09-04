@@ -31,6 +31,38 @@ router.post('/addToFav', async(req, res) => {
             }
         })
         const createGif = await gif.create({url: req.body.url, userId: user.id})
+
+        res.status(200).send()
+    }catch(err){
+        console.log(err)
+    }
+})
+
+router.put('/favGifRating/:id', async(req, res) => {
+
+    try{
+        const findGif = await gif.update({rating: req.body.rating, comment: req.body.comment},{
+        where: {
+            id: req.params.id
+        }
+    })
+    res.status(200).send() 
+
+    }catch(err){
+        console.log(err)
+    }
+    
+})
+
+router.delete('/deleteGif/:id', async(req, res) => {
+    try{
+        const deleteGif = await gif.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.status(200).send()
     }catch(err){
         console.log(err)
     }

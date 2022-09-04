@@ -12,17 +12,22 @@
 ## Steps to run Application
 
 1. Clone repo at https://github.com/ccarver80/Coschedule_coding_challange.git
-2. Open Terminal and CD into api folder
-3. run command ``` npm install ```
-4. run command ``` npm start ``` 
-5. Open Second terminal and CD into client folder
-6. Repeat steps 3 & 4
-7. A new browser should appear with app running
+2. Inside .env file, *GIPHY_API_KEY=ADD YOUR GIPHY API KEY HERE* add your GIPHY api key from www.developers.giphy.com
+3. Open Terminal and CD into api folder
+4. run command ``` npm install ```
+5. run command ``` npm start ``` 
+6. Open Second terminal and CD into client folder
+7. Repeat steps 3 & 4
+8. A new browser should appear with app running
 
 
 ## Instructions for running application
 1. You can create an account by clicking the "Create New Account" button on sign in page
 2. Or, you can use the username "test123" and password "12345" to login real quick.
+3. On the main home page once logged in you can search for your favorite gif.
+4. Click "Add to favorites" and it will be added to your favorites below.
+5. Feel free to rate each gif and add a personal comment on why its your favorite.
+
 
 
 ## Log

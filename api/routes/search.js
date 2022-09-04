@@ -12,7 +12,7 @@ router.post('/search', async(req, res) => {
     try{
 
         // Sends search request to Giphy and returns results back to client
-        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${req.body.search}&limit=50`)
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${req.body.search}`)
         const data = await response.json()
         //  send info back to client
         res.json({message: data})

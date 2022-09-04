@@ -43,21 +43,21 @@ export default function CreateAccount(props) {
     return(
        <div className="flex flex-col h-screen">
             {/* Login  */}
-            <div className='flex flex-col mx-auto mt-10 rounded-lg border border-black'>
-            <h1>Create New Account</h1>
+            <div className='flex flex-col mx-auto mt-10 rounded-lg border border-black p-5'>
+            <h1 className="mx-auto text-4xl font-bold">Create New Account</h1>
                 <form onSubmit={submitForm} className='flex flex-col p-5 mx-auto '>
                     
-                    <label>Please Pick A Username</label>
+                    <label className="text-2xl mx-auto">Please Pick A Username</label>
                     {/* Handle err messages from server */}
                     {errMessage ? (<h1 className="text-2xl text-red-500">{errMessage}</h1>) : ""}
 
                     <input className='border border-slate-500' onChange={(e) => setFormData({...formData, username: e.target.value })} type='text' />
-                    <label>Please Pick A Password</label>
+                    <label className="text-2xl mx-auto mt-5">Please Pick A Password</label>
                     <input minLength={5} className='border border-slate-500' onChange={(e) => setFormData({...formData, password: e.target.value })}type='password'/>
           
                     
                    
-                    <button type='submit'>Create Account</button>
+                    <button className="bg-red-400 p-2 rounded w-fit mx-auto mt-2" type='submit'>Create Account</button>
                 </form>
                 <button onClick={() => nav('/')} className="mx-auto">Login With Existing Account</button>
             </div>

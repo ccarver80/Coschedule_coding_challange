@@ -15,7 +15,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Gifs.init({
-    url: DataTypes.STRING
+    url: DataTypes.STRING,
+    rating: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    comment: DataTypes.TEXT,
+
   }, {
     sequelize,
     modelName: 'Gifs',

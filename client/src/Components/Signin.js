@@ -51,15 +51,16 @@ export default function Signin(props) {
 
       <div className="flex flex-col h-screen">
       <div className='flex flex-col mx-auto mt-10 rounded-lg border border-black'>
+      <h1 className="text-4xl font-bold mx-auto">Log In:</h1>
       <form onSubmit={sendLogin} className='flex flex-col p-5 mx-auto '>
-          <label>Username</label>
+          <label className="mx-auto text-2xl">Username</label>
             {/* Handle err messages from server */}
             {errMessage ? (<h1 className="text-2xl text-red-500">{errMessage}</h1>) : ""}
             
           <input className='border border-slate-500' onChange={(e) => setSignInData({...signInData, username: e.target.value})} type='text' />
-          <label>Password</label>
+          <label className="mx-auto text-2xl mt-5">Password</label>
           <input className='border border-slate-500' onChange={(e) => setSignInData({...signInData, password: e.target.value})} type='password'/>
-          <button type='submit'>Login</button>
+          <button className="bg-red-400 p-2 rounded w-fit mx-auto mt-2" type='submit'>Login</button>
       </form>
       <button onClick={() => nav('/create_account')} className="mx-auto">Create New Account</button>
   </div></div>

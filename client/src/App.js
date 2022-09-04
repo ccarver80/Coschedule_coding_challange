@@ -16,7 +16,8 @@ function App() {
   })
 
   return (
-    <>
+    
+    <div className="bg-slate-200 flex flex-col">
     <Header auth={setAuth} resetInfo={setUserInfo} userInfo={userInfo}/>
     <BrowserRouter>
       <Routes>
@@ -29,7 +30,7 @@ function App() {
         <Route path="/signin" element={<Signin userInfo={setUserInfo} auth={setAuth}/>} />
         <Route path='/create_account' element={<CreateAccount userInfo={setUserInfo} auth={setAuth}/>} />
       </Routes>
-    </BrowserRouter></>
+    </BrowserRouter></div>
   );
 }
 
