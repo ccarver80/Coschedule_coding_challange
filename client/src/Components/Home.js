@@ -143,7 +143,7 @@ export default function Home(props) {
           <div className="justify-center i-center flex overflow-auto mt-5 fixed inset-0 z-50">
             <div className="relative w-auto my-6 mx-auto max-w-5xl">
               {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="border-0 rounded-lg shadow-lg relative flex  p-5 flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                   <button className="" onClick={() => setSearchModal(false)}>
@@ -152,23 +152,28 @@ export default function Home(props) {
                 </div>
                 {/*body*/}
                 <form onSubmit={submitSearch}>
-                  <label>Search</label>
+                <div className="flex flex-col text-2xl ">
+                  <h1 className="mx-auto">Search</h1>
                   <input
                     onChange={(e) => setSearch({ search: e.target.value })}
                     className="border border-black"
                   />
-                  <button type="submit">Go</button>
+                  <button className="mx-auto bg-blue-400 p-2 w-32 mt-2 rounded-xl" type="submit">Go</button>
+                </div>
+                  
+                  
                 </form>
-                <button onClick={() => setSearchResults()}>Clear Search</button>
+                <button className="mx-auto bg-red-400 p-2 w-32 mt-2 rounded-xl" onClick={() => setSearchResults()}>Clear Search</button>
                 <div className="flex flex-wrap">
                   {searchResults
                     ? searchResults.map((result) => (
-                        <div className="flex flex-col">
+                        <div className="flex mt-5 flex-col">
                           <img
                             src={result.images.fixed_height.url}
                             alt="test"
                           />
                           <button
+                            className="mx-auto bg-blue-400 p-2 w-32 mt-2 rounded-xl" 
                             onClick={() =>
                               sendToFav(result.images.fixed_height.url)
                             }
@@ -231,7 +236,7 @@ export default function Home(props) {
  <button className="bg-red-400 p-2 w-fit rounded " onClick={() => deleteGif(fav.id)}>Delete Gif</button>
                   <label className="mx-auto mt-2">Change Comment:</label>
                   <input className="border border-black mx-auto h-20" onChange={(e) => setComment({comment: e.target.value, id: fav.id})} type="textarea" />
-                  <button className="bg-red-400 p-2 rounded w-fit mx-auto mt-2 mb-5 " type="submit">Send Comment</button>
+                  <button className="bg-blue-400 p-2 rounded w-fit mx-auto mt-2 mb-5 " type="submit">Send Comment</button>
                   
                 </form>
               </div>
