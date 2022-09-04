@@ -23,10 +23,9 @@
 
 ## Instructions for running application
 1. You can create an account by clicking the "Create New Account" button on sign in page
-2. Or, you can use the username "test123" and password "12345" to login real quick.
-3. On the main home page once logged in you can search for your favorite gif.
-4. Click "Add to favorites" and it will be added to your favorites below.
-5. Feel free to rate each gif and add a personal comment on why its your favorite.
+2. On the main home page once logged in you can click **Search Gifs** to search for your favorite gif.
+3. Click "Add to favorites" and it will be added to your favorites below.
+4. Feel free to rate each gif and add a personal comment on why its your favorite.
 
 
 
