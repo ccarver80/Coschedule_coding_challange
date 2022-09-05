@@ -9,6 +9,10 @@
 - Nodemon - Auto reset server anytime change is detected
 - Node-Fetch - To make fetch requests from the server
 
+
+## Watch Youtube Tutorial
+- [Youtube Tutorial](https://www.youtube.com/watch?v=uWZniYoqVd0)
+
 ## Steps to run Application
 
 1. Clone repo at https://github.com/ccarver80/Coschedule_coding_challange.git
@@ -35,3 +39,5 @@
 - **Aug 30th, 2022** Added custom error messages to user sign up and login for error handling. Updated users model to so username must be unique on database, and at least 5 characters. Downloaded node-fetch and made a simple call on node side to https://catfact.ninja/fact for testing purposes and was able to fetch data from server and serve it back to client successfully. 
 
 - **Sept 1st, 2022** Set up Giphy Api app, got custom api_key and built search bar fetch request on server. Added button for search results to "add to favorites".  Built "Gif" model for database, added associations for each gif has one user, but each user has many gifs. 
+
+- **Sept 4th, 2022** Built rating function and comment for each gif. Made a bunch of design changes
